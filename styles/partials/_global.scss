@@ -1,0 +1,284 @@
+@use "./variables" as *;
+@use "./fonts" as *;
+@use "./mixins" as *;
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Avenir Regular';
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+}
+
+h1, h2 {
+    font-family: 'Avenir Bold';
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+}
+
+
+h3 {
+    font-family: 'Avenir Demi';
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+}
+
+button {
+    font-family: 'Avenir Bold';
+    font-size: 1rem;
+    line-height: 2rem;
+}
+
+a {
+    text-decoration: none;
+    color: $mercury;
+}
+
+// .logo {
+//     height: 2rem;
+//     width: 12rem;
+// }
+
+@include tablet {
+    body {
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+    }    
+    
+    h1 {
+        font-size: 6rem;
+        line-height: 6.8rem;
+    }
+    
+    h2 {
+        font-size: 3.6rem;
+        line-height: 4.4rem;
+    }
+    
+    h3 {
+        font-size: 2.4rem;
+        line-height: 3.2rem;
+    }
+    
+    button {
+        font-size: 1.2rem;
+    }
+    
+    footer {
+        line-height: 2rem;
+    }
+}
+
+
+header {
+    background-color: $black;
+    padding-top: 1.6rem;
+}
+
+// -----------------------------------------
+// -----------------------------------------
+// -----------------------------------------
+// NAVBAR
+
+.nav {
+    color: $silver;
+    @include flex($direction: column);
+
+    &__header {
+        padding: 0.8rem 0;
+    }
+
+    &__links {
+        @include flex($justify: space-around);
+    }
+
+    &__anchor {
+        padding: 0;
+        &--bio {
+            border-right: 0.4em solid $black;
+        }
+        
+        &--shows {
+            border-left: 0.4em solid $black;
+        }
+    }
+
+    &__link {
+        list-style-type: none;
+        padding-bottom: 0.8em;
+        width: 50vw;
+        text-align: center;   
+        border-bottom: 0.4rem solid transparent;
+
+        &--bio {
+            margin-right: -0.4em;
+        }
+        
+        &--shows {
+            margin-left: -0.4em;;
+        }
+     
+        &--active {
+            color: white;
+            font-weight: 700;
+            border-bottom-color: white;    
+        }
+    }
+
+    &__link:hover {       
+        color: white;
+        border-bottom-color: white;        
+    }
+
+
+    @include tablet {
+        padding: 1% 5% 0;
+        margin: 0;
+        @include flex($justify: flex-start);
+        
+        &__header {
+            padding: 0 5.6rem 1.6rem 0;
+        }
+
+        &__link {
+            padding: 0 3.6em 1.2em 0;
+
+            &--bio, &--shows {
+                margin: 0;
+            }
+
+            &--bio {
+                width: 60%;                
+            }
+
+            &--shows {
+                width: 10%;
+            }
+            
+        }
+    }
+
+    @include desktop {
+        padding-left: 0;
+        width: 98.6rem;
+        margin: 0 auto;
+    }
+}
+
+
+// -----------------------------------------
+// -----------------------------------------
+// -----------------------------------------
+// FOOTER
+
+
+.footer {
+    background-color: $black;
+    color: white;
+    padding: 5%;
+
+    &__header {
+        padding-top: 2.4rem;
+    }
+
+    &__header, &__logo, &__contact, &__column, &__name, &__location {
+        padding-bottom: 1.6rem;
+    }
+
+    &__socials {
+        padding-bottom: 2rem;
+    }
+
+    &__social-icon {
+        padding-right: 1.6em;
+    }
+
+    &__email a {
+        color: white;
+    }
+
+    &__copyright {
+        font-size: 1rem;
+    }
+
+    &__logo {
+        &--mobile-nodisplay {
+            display: none;
+            @include tablet {
+                display: flex;
+            }
+        }
+
+        &--mobile-display {
+            @include tablet {
+                display: none;
+            }
+        }
+    }
+
+    @include tablet {
+        margin: 0;
+        padding: 0;
+        padding: 2% 5% 5%;        
+
+        &__header {
+            padding-bottom: 0;
+        }
+
+        &__socials {
+            margin-left: -17rem;
+            padding-bottom: 0.4rem;
+        }
+
+        &__logo {
+            padding-bottom: 0.8rem;
+        }
+
+        &__heading {
+            @include flex($justify: space-between, $align: end);
+            padding-bottom: 2.4rem;
+        }
+
+        &__contact {
+            @include flex($justify: flex-start);
+            margin-right: -6rem;
+        }
+        
+        &__column {
+            padding-right: 6rem;
+        }       
+
+        &__copyright {
+            padding-top: 1.6rem;
+        }
+
+    }
+
+    @include desktop {
+        margin: 0;
+        padding: 4rem 0 2rem;
+
+        &__heading, &__contact, &__copyright {
+            padding: 0;
+            width: 98.6rem;
+            margin: 0 auto;
+            padding-bottom: 2rem;
+        }
+
+        &__column {
+            padding-right: 9.6rem;
+        }
+
+        &__socials {
+            margin-left: -37.2rem;
+        }
+    }
+}

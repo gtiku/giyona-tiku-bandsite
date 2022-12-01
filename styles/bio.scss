@@ -1,0 +1,197 @@
+@use "./partials/variables" as *;
+@use "./partials/fonts" as *;
+@use "./partials/mixins" as *;
+@use "./partials/global";
+
+
+.hero {
+    background-image: url(../../assets/images/hero-bio.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+    padding: 16vh 5vw;
+    background-color: rgba(0,0,0,0.5);
+
+    &__header {
+        color: white;
+    }
+
+    @include tablet {
+        height: 55vh;
+        padding: 25vh 5vw;
+    }
+
+    @include desktop {
+        margin: 0;
+        padding: 25vh 0;
+
+        &__header {
+            width: 98.6rem;
+            margin: 0 auto;
+        }
+    }
+}
+
+
+
+
+.about {
+
+    &__header {
+        padding-top: 0.8rem;
+    }
+
+    &__header, &__subheader, &__paragraph {
+        padding-bottom: 1.6rem;
+    }
+
+    &__caption, &__speaker {
+        font-family: 'Avenir Demi';
+    }
+
+    &__caption, &__speaker {
+        padding-bottom: 0.8rem;
+    }
+
+    &__subheader {
+        padding-top: 1.6rem;
+    }
+
+    &__image {
+        width: 100%;
+        padding-bottom: 2.4rem;
+    }
+
+
+    @include tablet {
+
+        &__header {
+            padding: 2.4rem 0;
+        }
+
+        &__caption {
+            padding-bottom: 1.6rem;
+        }
+
+        &__subheader {
+            padding-top: 2.4rem;
+        }
+
+        &__bio {
+            @include flex;
+        }
+
+        &__paragraph {
+            &--left {
+                padding-right: 3.6%;
+            }
+            
+            padding-bottom: 0;
+        }
+
+        &__bio {
+            padding-bottom: 4rem;
+        }
+
+        &__image,  &__caption, &__speaker, &__subheader, &__bio {
+            margin: 0 10%;
+            width: 80%;
+        }
+        
+    }
+
+    @include desktop {
+        padding: 0;
+        margin: 0;
+
+        &__header {
+            width: 98.6rem;
+            margin: 0 auto;
+            padding: 0;
+            padding-bottom: 3.6rem;
+        }
+
+        &__image {
+            display: block;
+        }
+
+        &__image, &__caption, &__speaker, &__subheader, &__bio {
+            width: 80rem;
+            margin: 0 auto;
+        }
+
+        &__bio {
+            padding-bottom: 0;
+        }
+        
+    }
+
+}
+
+.gallery {
+    background-color: $alabaster;
+
+    &__row {
+        padding: 0;
+        margin: 0;
+    }
+
+    &__photo {
+        width: 100%;
+        padding-top: 0.8rem; 
+        margin: 0 auto; 
+        filter: grayscale(100%);
+        &:hover {
+            filter: grayscale(0%);
+        }
+    }
+
+    
+    @include tablet {
+        padding: 0;
+        margin: 0;
+
+        &__photos {           
+            @include flex($direction: column);  
+        }
+
+        &__row {
+            @include flex;
+            margin: 0 -6rem;
+        }
+
+        &__photo {
+            width: 30%;
+            margin: 0;
+            padding: 1.6rem;
+
+        }
+    }
+
+    @include desktop {
+        padding: 0;
+        margin: 0;
+
+        &__header, &__photos {
+            width: 98.6rem;
+            margin: 0 auto;
+        }
+
+        &__row {
+            margin: 0 -7.2rem;
+        }
+
+        &__photos {
+            margin-bottom: -2rem;
+        }
+
+    }
+}
+
+.about, .gallery {
+    padding: 5% 5% 2%;
+
+    @include tablet {
+        padding: 5% 5% 3%;
+    }
+}
