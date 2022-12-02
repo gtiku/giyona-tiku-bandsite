@@ -68,9 +68,6 @@ a {
         line-height: 3.2rem;
     }
     
-    button {
-        font-size: 1.2rem;
-    }
     
     footer {
         line-height: 2rem;
@@ -149,20 +146,10 @@ header {
         }
 
         &__link {
-            padding: 0 3.6em 1.2em 0;
-
-            &--bio, &--shows {
-                margin: 0;
-            }
-
-            &--bio {
-                width: 60%;                
-            }
-
-            &--shows {
-                width: 10%;
-            }
-            
+            padding: 0 0 1.6rem;
+            margin-top: 0.4rem;
+            margin-right: 3.6rem;
+            width: auto; 
         }
     }
 
@@ -229,22 +216,26 @@ header {
         padding: 0;
         padding: 2% 5% 5%;        
 
+        &__heading {
+            @include flex($justify: space-between, $align: end);
+            padding-bottom: 2.4rem;
+        }
+
+        &__subheading {
+            @include flex($justify: flex-start);
+        }
+
+        &__socials {
+            padding-bottom: 0.4rem;
+        }
+
         &__header {
             padding-bottom: 0;
         }
 
-        &__socials {
-            margin-left: -17rem;
-            padding-bottom: 0.4rem;
-        }
 
         &__logo {
             padding-bottom: 0.8rem;
-        }
-
-        &__heading {
-            @include flex($justify: space-between, $align: end);
-            padding-bottom: 2.4rem;
         }
 
         &__contact {
