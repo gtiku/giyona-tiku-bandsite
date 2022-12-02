@@ -218,24 +218,23 @@ header {
 
         &__heading {
             @include flex($justify: space-between, $align: end);
-            padding-bottom: 2.4rem;
+            padding: 0 0.1rem 2.4rem 0;
         }
 
         &__subheading {
             @include flex($justify: flex-start);
         }
 
-        &__socials {
-            padding-bottom: 0.4rem;
-        }
-
         &__header {
-            padding-bottom: 0;
+            padding: 0 4rem 0 0rem;
         }
 
+        &__socials {
+            padding: 0 0 0 0.6rem;
+        }
 
         &__logo {
-            padding-bottom: 0.8rem;
+            padding: 0 0 0.8rem 0;
         }
 
         &__contact {
@@ -250,26 +249,31 @@ header {
         &__copyright {
             padding-top: 1.6rem;
         }
-
     }
+
 
     @include desktop {
         margin: 0;
         padding: 4rem 0 2rem;
 
         &__heading, &__contact, &__copyright {
-            padding: 0;
+            padding: 0 0 2rem 0;
             width: 98.6rem;
             margin: 0 auto;
-            padding-bottom: 2rem;
         }
 
         &__column {
             padding-right: 9.6rem;
         }
 
-        &__socials {
-            margin-left: -37.2rem;
+        &__header {
+            padding: 0 8rem 0 0rem;
         }
+
+        &__socials {
+            padding: 0;
+        }
+
+
     }
 }
