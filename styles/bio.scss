@@ -5,30 +5,44 @@
 
 
 .hero {
+    height: 40vh;
     background-image: url(../../assets/images/hero-bio.jpg);
     background-size: cover;
     background-position: center;
-    height: 40vh;
-    padding: 16vh 5vw;
-    background-color: rgba(0,0,0,0.7);
-    z-index: 2;
+    z-index: -1;
 
     &__header {
+        padding: 16vh 5vw;
         color: white;
+    }
+
+    &__overlay {
+        padding: 0;
+        margin: 0;
+        background-color: rgba(0,0,0,0.5);
+        height: 40vh;
+        z-index: 2;
     }
 
     @include tablet {
         height: 55vh;
-        padding: 25vh 5vw;
+
+        &__header {
+            padding: 25vh 5vw;
+        }
+
+        &__overlay {
+            height: 55vh;
+        }
     }
 
     @include desktop {
-        margin: 0;
-        padding: 25vh 0;
+        margin: 0;     
 
         &__header {
             width: 98.6rem;
             margin: 0 auto;
+            padding: 25vh 0;
         }
     }
 }
