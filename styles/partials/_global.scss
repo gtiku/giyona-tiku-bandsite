@@ -19,7 +19,7 @@ body {
 }
 
 h1, h2 {
-    font-family: 'Avenir Bold';
+    font-family: 'Avenir Demi';
     font-size: 2.4rem;
     line-height: 3.2rem;
 }
@@ -42,10 +42,10 @@ a {
     color: $mercury;
 }
 
-// .logo {
-//     height: 2rem;
-//     width: 12rem;
-// }
+.logo {
+    height: 2rem;
+    box-sizing: content-box;
+}
 
 @include tablet {
     body {
@@ -213,7 +213,7 @@ header {
         &--mobile-nodisplay {
             display: none;
             @include tablet {
-                display: flex;
+                display: inline-block;
             }
         }
 
