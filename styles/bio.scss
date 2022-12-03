@@ -5,34 +5,37 @@
 
 
 .hero {
-    height: 40vh;
+    height: 50vh;
     background-image: url(../../assets/images/hero-bio.jpg);
     background-size: cover;
     background-position: center;
     z-index: -1;
 
+    
+
     &__header {
-        padding: 16vh 5vw;
-        color: white;
+        padding: 20vh 5vw;
+        color: $alabaster;
+        font-weight: 400;
     }
 
     &__overlay {
         padding: 0;
         margin: 0;
-        background-color: rgba(0,0,0,0.5);
-        height: 40vh;
+        background-color: rgba(32,32,32,0.5);
+        height: 50vh;
         z-index: 2;
     }
 
     @include tablet {
-        height: 55vh;
+        height: 60vh;
 
         &__header {
             padding: 25vh 5vw;
         }
 
         &__overlay {
-            height: 55vh;
+            height: 60vh;
         }
     }
 
@@ -62,14 +65,12 @@
 
     &__caption, &__speaker {
         font-family: 'Avenir Demi';
-    }
-
-    &__caption, &__speaker {
         padding-bottom: 0.8rem;
     }
 
     &__subheader {
         padding-top: 1.6rem;
+        font-family: 'Avenir Regular';
     }
 
     &__image {
@@ -84,12 +85,20 @@
             padding: 2.4rem 0;
         }
 
-        &__caption {
+        &__caption  {
+            line-height: 3.6rem;
+            font-size: 2rem;
             padding-bottom: 1.6rem;
+        }
+        
+        &__speaker {
+            font-size: 1.6rem;
         }
 
         &__subheader {
-            padding-top: 2.4rem;
+            padding-top: 4rem;
+            font-family: 'Avenir Demi';
+            color: $dark-black;
         }
 
         &__bio {
@@ -135,6 +144,10 @@
             margin: 0 auto;
         }
 
+        &__caption {
+            padding: 0 20rem 2rem 0;
+        }
+
         &__bio {
             padding-bottom: 0;
         }
@@ -168,6 +181,7 @@
 
         &__photos {           
             @include flex($direction: column);  
+            padding-top: 1.6rem;
             
         }
 
@@ -204,6 +218,6 @@
     padding: 5% 5% 2%;
 
     @include tablet {
-        padding: 5% 5% 3%;
+        padding: 3% 5% 3%;
     }
 }
