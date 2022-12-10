@@ -4,52 +4,84 @@
 @use "./partials/global";
 
 .hero {
-  height: 50vh;
+  min-height: 30rem;
+  max-height: 40rem;
   background-image: url(../../assets/images/hero-bio.jpg);
   background-size: cover;
   background-position: center;
   z-index: -1;
 
-  &__header {
-    padding: 20vh 5vw;
-    color: $alabaster;
-    font-weight: 400;
+  @include tablet {
+    min-height: 50rem;
+    max-height: 60rem;
+  }
+
+  @include desktop {
+    min-height: 60rem;
+    max-height: 80rem;
   }
 
   &__overlay {
     padding: 0;
     margin: 0;
     background-color: rgba(32, 32, 32, 0.5);
-    height: 50vh;
     z-index: 2;
-  }
+    min-height: 30rem;
+    max-height: 40rem;
 
-  @include tablet {
-    height: 60vh;
-
-    &__header {
-      padding: 25vh 5vw;
+    @include tablet {
+      min-height: 50rem;
+      max-height: 60rem;
     }
 
-    &__overlay {
-      height: 60vh;
+    @include desktop {
+      min-height: 60rem;
+      max-height: 80rem;
     }
   }
 
-  @include desktop {
-    margin: 0;
+  &__header {
+    padding: 12rem 2rem;
+    color: $alabaster;
+    font-weight: 400;
 
-    &__header {
+    @include tablet {
+      padding: 20rem 4rem;
+    }
+
+    @include desktop {
       width: 98.6rem;
       margin: 0 auto;
-      padding: 25vh 0;
+      padding: 30rem 0;
     }
   }
 }
 
 .about {
+  padding: 5% 5% 2%;
+
+  @include tablet {
+    padding: 3% 5% 3%;
+  }
+
+  @include desktop {
+    padding: 4.8rem 0;
+    margin: 0;
+  }
+
   &__header {
     padding-top: 0.8rem;
+
+    @include tablet {
+      padding: 2.4rem 0;
+    }
+
+    @include desktop {
+      width: 98.6rem;
+      margin: 0.8rem auto;
+      padding: 0;
+      padding-bottom: 4rem;
+    }
   }
 
   &__header,
@@ -64,103 +96,105 @@
     padding-bottom: 0.8rem;
   }
 
-  &__subheader {
-    padding-top: 1.6rem;
-    font-family: "Avenir Regular";
-  }
-
-  &__image {
-    width: 100%;
-    padding-bottom: 2.4rem;
-  }
-
-  @include tablet {
-    &__header {
-      padding: 2.4rem 0;
-    }
-
-    &__caption {
+  &__caption {
+    @include tablet {
       line-height: 3.6rem;
       font-size: 2rem;
       padding-bottom: 1.6rem;
     }
 
-    &__speaker {
+    @include desktop {
+      padding: 0 20rem 2rem 0;
+    }
+  }
+
+  &__speaker {
+    @include tablet {
       font-size: 1.6rem;
     }
+  }
 
-    &__subheader {
+  &__subheader {
+    padding-top: 1.6rem;
+    font-family: "Avenir Regular";
+
+    @include tablet {
       padding-top: 4rem;
       font-family: "Avenir Demi";
       color: $dark-black;
     }
+  }
 
-    &__bio {
+  &__image {
+    width: 100%;
+    padding-bottom: 2.4rem;
+
+    @include desktop {
+      display: block;
+    }
+  }
+
+  &__bio {
+    @include tablet {
       @include flex;
+      padding-bottom: 4rem;
     }
 
-    &__paragraph {
+    @include desktop {
+      padding-bottom: 0;
+    }
+  }
+
+  &__paragraph {
+    @include tablet {
       &--left {
         padding-right: 3.6%;
       }
 
       padding-bottom: 0;
     }
+  }
 
-    &__bio {
-      padding-bottom: 4rem;
-    }
-
-    &__image,
-    &__caption,
-    &__speaker,
-    &__subheader,
-    &__bio {
+  &__image,
+  &__caption,
+  &__speaker,
+  &__subheader,
+  &__bio {
+    @include tablet {
       margin: 0 10%;
       width: 80%;
     }
-  }
 
-  @include desktop {
-    padding: 0;
-    margin: 0;
-
-    &__header {
-      width: 98.6rem;
-      margin: 0 auto;
-      padding: 0;
-      padding-bottom: 3.6rem;
-    }
-
-    &__image {
-      display: block;
-    }
-
-    &__image,
-    &__caption,
-    &__speaker,
-    &__subheader,
-    &__bio {
+    @include desktop {
       width: 80rem;
       margin: 0 auto;
-    }
-
-    &__caption {
-      padding: 0 20rem 2rem 0;
-    }
-
-    &__bio {
-      padding-bottom: 0;
     }
   }
 }
 
 .gallery {
   background-color: $alabaster;
+  padding: 5% 5% 2%;
+
+  @include tablet {
+    padding: 0;
+    margin: 0;
+    padding: 3% 5% 3%;
+  }
+
+  @include desktop {
+    padding: 4rem 0;
+    margin: 0;
+  }
 
   &__row {
     padding: 0;
     margin: 0;
+
+    @include tablet {
+      @include flex;
+      margin: 0 -1.2rem;
+    }
   }
 
   &__photo {
@@ -171,50 +205,31 @@
     &:hover {
       filter: grayscale(0%);
     }
-  }
 
-  @include tablet {
-    padding: 0;
-    margin: 0;
-
-    &__photos {
-      @include flex($direction: column);
-      padding-top: 1.6rem;
-    }
-
-    &__row {
-      @include flex;
-      margin: 0 -1.2rem;
-    }
-
-    &__photo {
+    @include tablet {
       width: 33%;
       margin: 0;
       padding: 0.8rem;
     }
   }
 
-  @include desktop {
-    padding: 0;
-    margin: 0;
-
-    &__header,
-    &__photos {
-      width: 98.6rem;
-      margin: 0 auto;
+  &__photos {
+    @include tablet {
+      @include flex($direction: column);
+      padding-top: 1.6rem;
     }
 
-    &__photos {
+    @include desktop {
+      width: 98.6rem;
+      margin: 0 auto;
       margin-bottom: -2rem;
     }
   }
-}
 
-.about,
-.gallery {
-  padding: 5% 5% 2%;
-
-  @include tablet {
-    padding: 3% 5% 3%;
+  &__header {
+    @include desktop {
+      width: 98.6rem;
+      margin: 0.8rem auto;
+    }
   }
 }
