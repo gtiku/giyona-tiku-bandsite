@@ -14,7 +14,7 @@
           <img
             src="../assets/logos/Logo-bandsite.svg"
             alt="bandsite logo"
-            class="nav__header logo"
+            class="nav__header nav__logo"
           />
         </a>
         <ul class="nav__links">
@@ -27,43 +27,11 @@
         </ul>
       </nav>
     </header>
-    <main>
-      <section class="shows">
-        <h2 class="shows__header section__header">Shows</h2>
 
-        <div class="shows__event-block">
-          <div class="shows__labels">
-            <p class="shows__label shows__label--date">DATE</p>
-            <p class="shows__label shows__label--venue">VENUE</p>
-            <p class="shows__label shows__label--location">LOCATION</p>
-          </div>
-          <div class="shows__event-data">
-            <div class="shows__data-block">
-              <p class="shows__label shows__label--date shows__label--mobile">
-                DATE
-              </p>
-              <p class="shows__info shows__info--date">Monday Sept 06 2021</p>
-            </div>
-            <div class="shows__data-block">
-              <p class="shows__label shows__label--mobile">VENUE</p>
-              <p class="shows__info">Ronald Lane</p>
-            </div>
-            <div class="shows__data-block">
-              <p class="shows__label shows__label--mobile">LOCATION</p>
-              <p class="shows__info">San Francisco, CA</p>
-            </div>
-            <button class="shows__button shows__button--nomobile">
-              BUY TICKETS
-            </button>
-          </div>
-          <button class="shows__button shows__button--mobile">
-            BUY TICKETS
-          </button>
-          <hr class="shows__hr shows__hr--nomobile" />
-        </div>
-        <hr class="shows__hr shows__hr--mobile" />
-      </section>
+    <main>
+      <section class="shows"></section>
     </main>
+
     <footer class="footer">
       <div class="footer__heading">
         <div class="footer__subheading">
@@ -157,5 +125,6 @@
         Copyright The Bees Knees © 2021 All Rights Reserved
       </p>
     </footer>
+    <script src="../scripts/build-shows-page.js"></script>
   </body>
 </html>

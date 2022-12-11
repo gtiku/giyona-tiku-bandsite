@@ -4,25 +4,113 @@
 @use "./partials/global";
 
 .shows {
-  padding: 5% 5% 2%;
+  margin-bottom: 2rem;
+
+
+  @include desktop {
+    padding: 4rem 0;
+    width: 98.6rem;
+    margin: 0 auto;
+  }
+
 
   &__header {
-    padding: 0.8rem 0;
+    margin: 2rem 1.6rem 0.8rem;
+
+    @include tablet {
+      margin: 0;
+      padding: 4rem 5% 3.2rem;
+    }
   }
 
   &__labels {
     display: none;
+
+    @include tablet {
+      @include flex($justify: flex-start);
+      width: 69.2rem;
+      margin: 0 auto;
+    }
+
+    @include desktop {
+      max-width: 75rem;
+      margin-left: auto;
+      margin-right: 0;
+    }
   }
 
   &__label {
     color: $silver;
     font-size: 1rem;
     font-weight: 800;
+
+    &--mobile {
+      font-size: 0.8rem;
+    }
+
+
+    @include tablet {
+      width: 16rem;
+
+      &--venue {
+        margin-left: 6em;
+      }
+
+      &--mobile {
+        display: none;
+      }
+    }
   }
 
   &__event-block,
   &__event-data {
     @include flex($direction: column, $align: flex-start);
+  }
+
+  &__event-block {
+    margin: 4rem 0;
+    padding-bottom: 1.6rem;
+    border-bottom: 0.2rem solid $mercury;
+
+    @include tablet {
+      display: inline;
+      width: 72rem;
+      margin: 0 auto;
+
+    }
+
+    @include desktop {
+      max-width: 75rem;
+      margin-left: auto;
+      margin-right: 0;
+    }
+  }
+
+  &__event-data {
+    margin: 0 1.6rem;
+    margin-bottom: 0.8rem;
+
+    @include tablet {
+      @include flex($justify: flex-start);
+      padding: 1.6rem 0;
+      width: 69.2rem;
+      margin: 0.8rem auto;
+      border-bottom: 0.2rem solid $mercury;
+
+      &:hover {
+        background-color: $alabaster;
+      }
+
+      &:active {
+        background-color: $mercury;
+      }
+    }
+
+    @include desktop {
+      max-width: 75rem;
+      margin-left: auto;
+      margin-right: 0;
+    }
   }
 
   &__info {
@@ -32,7 +120,9 @@
   }
 
   &__data-block {
+    width: 18rem;
     padding: 0.8rem 0;
+    padding-right: 2rem;
   }
 
   &__button {
@@ -40,86 +130,21 @@
       display: none;
     }
 
-    background-color: $black;
-    color: $mercury;
-    width: 100%;
-    border-radius: 5px;
-    border: none;
-    padding: 0.4rem 0;
-  }
-
-  &__hr {
-    background-color: $mercury;
-    height: 1px;
-    border: none;
-    margin: 0.4rem -2rem;
-
-    &__nomobile {
-      display: none;
-    }
-  }
-
-  @include tablet {
-    padding: 3% 5% 3%;
-
-    &__event-block {
-      display: inline;
-      padding: 0;
-      margin: 0;
+    &--mobile {
+      width: 90%;
+      margin: 0 auto;      
     }
 
-    &__labels {
-      @include flex($justify: space-between);
-    }
-
-    &__label {
-      width: 16rem;
-
-      &--venue {
-        margin-left: 6.4rem;
-      }
-
-      &--location {
-        padding-right: 48.5%;
-      }
-
-      &--mobile {
-        display: none;
-      }
-    }
-
-    &__event-data {
-      @include flex($justify: space-between);
-    }
-
-    &__button {
+    @include tablet {
       &--mobile {
         display: none;
       }
 
       &--nomobile {
-        display: block;
-      }
-
-      width: 12rem;
-    }
-
-    &__hr {
-      &--mobile {
-        display: none;
-      }
-
-      &--nomobile {
-        display: inline;
+        display: inline-block;
+        padding: 1rem 2.4rem 0.8rem;
       }
     }
   }
 
-  @include desktop {
-    // &__labels,
-    // &__event-block,
-    // &__hr {
-    //   width: 76.8rem;
-    // }
-  }
 }

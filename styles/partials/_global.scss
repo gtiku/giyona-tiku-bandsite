@@ -62,20 +62,21 @@ h3 {
 }
 
 button {
-  font-family: "Avenir Bold";
-  font-weight: 800;
-  font-size: 1rem;
+  font-family: "Avenir Demi";
+  font-size: 1.4rem;
+  font-weight: 600;
   line-height: 2rem;
+  background-color: $black;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  padding: 1rem 0 0.8rem;
+  width: 16rem;
 }
 
 a {
   text-decoration: none;
   color: $mercury;
-}
-
-.logo {
-  height: 2rem;
-  box-sizing: content-box;
 }
 
 header {
@@ -164,6 +165,11 @@ footer {
       margin-right: 4.8rem;
       width: auto;
     }
+  }
+
+  &__logo {
+    height: 2rem;
+    box-sizing: content-box;
   }
 }
 
@@ -256,6 +262,9 @@ footer {
   }
 
   &__logo {
+    height: 2rem;
+    box-sizing: content-box;
+
     &--mobile-nodisplay {
       display: none;
       @include tablet {

@@ -1,0 +1,133 @@
+@use "./variables" as *;
+@use "./fonts" as *;
+@use "./mixins" as *;
+@use "./global";
+
+label {
+    color: $silver;
+    font-weight: 800;
+  }
+  
+  input {
+    min-width: 16rem;
+    min-width: 24rem;
+    background-color: $alabaster;
+    border: 2px solid $mercury;
+    border-radius: 5px;
+    font-family: 'Avenir Regular';
+    font-weight: 400;
+    color: $black;
+    padding: 0;
+    padding-left: 2rem;
+    margin-bottom: 2rem;
+  
+    &:focus {
+      outline-color: $silver;
+    }
+  
+    @include tablet {
+      width: 50rem;
+    }
+  }
+  
+  input[type="text"] {
+    height: 4rem;
+    // margin-bottom: 2rem;
+  }
+  
+  input[type="textarea"] {
+    height: 8rem;
+  }
+
+.comments {
+    padding: 5% 5% 2%;
+  
+      @include desktop {
+        padding: 4rem 0;
+        margin: 0 auto;
+        width: 98.6rem;
+      }
+  
+  
+    &__pfp {
+      border-radius: 50%;
+      height: 3.6rem;
+      width: 3.6rem;
+      margin-right: 2rem;
+  
+      @include tablet {
+        height: 4.8rem;
+        width: 4.8rem;
+  
+      }
+    }
+  
+    &__form {
+      @include flex($align: flex-start);
+      padding: 2rem 0;
+      border-bottom: 0.2rem solid $mercury;
+      margin-bottom: 2rem;
+    }
+  
+    &__input {
+      @include flex($direction: column, $align: flex-start);
+    }
+  
+    &__button {
+      align-self: end;
+    }
+  
+    &__pfp-box {
+      height: 3.6rem;
+      width: 3.6rem;
+      border-radius: 50%;
+      margin-right: 1.2rem;
+      border: none;
+      background-color: $mercury;
+      background-size: cover;
+  
+      &--form {
+        background-image: url(../assets/images/Mohan-muruge.jpg);
+        background-size: cover;
+      }
+  
+      @include tablet {
+        height: 4.8rem;
+        width: 4.8rem;
+        margin-right: 2rem;
+  
+      }
+    }
+  
+    &__box {
+      @include flex($align: flex-start);
+      border-bottom: 0.2rem solid $mercury;
+      margin-bottom: 2rem;
+    }
+  
+    &__text-display {
+      @include flex($direction: column);
+      min-width: 16rem;
+      max-width: 24rem;
+    }
+  
+    &__name-date {
+      @include flex($justify: space-between);
+    }
+  
+    &__name {
+      font-weight: 600;
+    }
+  
+    &__date {
+      color: $mercury;
+    }
+  
+    &__comment {
+      font-size: 1.2rem;
+      margin: 0.4rem 0;
+    }
+  
+  }
+  
+  

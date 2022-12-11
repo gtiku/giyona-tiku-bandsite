@@ -2,6 +2,7 @@
 @use "./partials/fonts" as *;
 @use "./partials/mixins" as *;
 @use "./partials/global";
+@use "./partials/comments";
 
 .hero {
   min-height: 30rem;
@@ -233,3 +234,4 @@
     }
   }
 }
+
