@@ -6,6 +6,12 @@
 label {
     color: $silver;
     font-weight: 800;
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+
+    @include tablet {
+        font-size: 1.3rem;
+    }
   }
   
   input {
@@ -26,13 +32,12 @@ label {
     }
   
     @include tablet {
-      width: 50rem;
+      width: 44rem;
     }
   }
   
   input[type="text"] {
     height: 4rem;
-    // margin-bottom: 2rem;
   }
   
   input[type="textarea"] {
@@ -67,6 +72,17 @@ label {
       padding: 2rem 0;
       border-bottom: 0.2rem solid $mercury;
       margin-bottom: 2rem;
+
+      @include tablet {
+        width: 48rem;
+        margin: 0 auto;
+    }
+
+    @include desktop {
+        width: 60rem;
+        margin: 0 auto;
+      }
+
     }
   
     &__input {
@@ -74,14 +90,18 @@ label {
     }
   
     &__button {
-      align-self: end;
+        width: 100%;
+        @include tablet {
+            width: 16rem;
+            align-self: end;
+        }
     }
   
     &__pfp-box {
       height: 3.6rem;
       width: 3.6rem;
       border-radius: 50%;
-      margin-right: 1.2rem;
+      margin: 1rem;
       border: none;
       background-color: $mercury;
       background-size: cover;
@@ -94,21 +114,43 @@ label {
       @include tablet {
         height: 4.8rem;
         width: 4.8rem;
+        margin: 1rem;
         margin-right: 2rem;
   
       }
+    }
+
+    &__all-comments {
+        margin: 0 auto;
+        margin-top: 2rem;
+
+        @include tablet {
+            width: 48rem;
+        }
     }
   
     &__box {
       @include flex($align: flex-start);
       border-bottom: 0.2rem solid $mercury;
       margin-bottom: 2rem;
+
+      @include tablet {
+        width: 48rem;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+      }
+
+      @include desktop {
+        width: 60rem;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+      }
+
+
     }
   
     &__text-display {
       @include flex($direction: column);
-      min-width: 16rem;
-      max-width: 24rem;
     }
   
     &__name-date {
