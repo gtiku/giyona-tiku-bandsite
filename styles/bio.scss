@@ -4,60 +4,6 @@
 @use "./partials/global";
 @use "./partials/comments";
 
-.hero {
-  min-height: 30rem;
-  max-height: 40rem;
-  background-image: url(../../assets/images/hero-bio.jpg);
-  background-size: cover;
-  background-position: center;
-  z-index: -1;
-
-  @include tablet {
-    min-height: 50rem;
-    max-height: 60rem;
-  }
-
-  @include desktop {
-    min-height: 60rem;
-    max-height: 80rem;
-  }
-
-  &__overlay {
-    padding: 0;
-    margin: 0;
-    background-color: rgba(32, 32, 32, 0.5);
-    z-index: 2;
-    min-height: 30rem;
-    max-height: 40rem;
-
-    @include tablet {
-      min-height: 50rem;
-      max-height: 60rem;
-    }
-
-    @include desktop {
-      min-height: 60rem;
-      max-height: 80rem;
-    }
-  }
-
-  &__header {
-    padding: 12rem 2rem;
-    color: $alabaster;
-    font-weight: 400;
-
-    @include tablet {
-      padding: 20rem 4rem;
-    }
-
-    @include desktop {
-      width: 98.6rem;
-      margin: 0 auto;
-      padding: 30rem 0;
-    }
-  }
-}
-
 .about {
   padding: 5% 5% 2%;
 

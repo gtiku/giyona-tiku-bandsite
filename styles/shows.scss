@@ -6,13 +6,11 @@
 .shows {
   margin-bottom: 2rem;
 
-
   @include desktop {
     padding: 4rem 0;
     width: 98.6rem;
     margin: 0 auto;
   }
-
 
   &__header {
     margin: 2rem 1.6rem 0.8rem;
@@ -20,6 +18,12 @@
     @include tablet {
       margin: 0;
       padding: 4rem 5% 3.2rem;
+    }
+
+    @include desktop {
+      width: 98.6rem;
+      margin: 0 auto;
+      padding: 0;
     }
   }
 
@@ -48,13 +52,9 @@
       font-size: 0.8rem;
     }
 
-
     @include tablet {
       width: 16rem;
-
-      &--venue {
-        margin-left: 6em;
-      }
+      margin-right: 2rem;
 
       &--mobile {
         display: none;
@@ -68,19 +68,25 @@
   }
 
   &__event-block {
-    margin: 4rem 0;
+    margin: 0.8rem 0;
     padding-bottom: 1.6rem;
     border-bottom: 0.2rem solid $mercury;
 
     @include tablet {
-      display: inline;
+      @include flex($direction: column);
       width: 72rem;
       margin: 0 auto;
 
+      &:hover {
+        background-color: $alabaster;
+      }
+
+      &--selected {
+        background-color: $mercury;
+      }
     }
 
     @include desktop {
-      max-width: 75rem;
       margin-left: auto;
       margin-right: 0;
     }
@@ -94,22 +100,8 @@
       @include flex($justify: flex-start);
       padding: 1.6rem 0;
       width: 69.2rem;
-      margin: 0.8rem auto;
-      border-bottom: 0.2rem solid $mercury;
-
-      &:hover {
-        background-color: $alabaster;
-      }
-
-      &:active {
-        background-color: $mercury;
-      }
-    }
-
-    @include desktop {
-      max-width: 75rem;
-      margin-left: auto;
-      margin-right: 0;
+      padding: 0;
+      margin: 1.8rem auto 0;
     }
   }
 
@@ -132,7 +124,7 @@
 
     &--mobile {
       width: 90%;
-      margin: 0 auto;      
+      margin: 0 auto;
     }
 
     @include tablet {
@@ -146,5 +138,4 @@
       }
     }
   }
-
 }

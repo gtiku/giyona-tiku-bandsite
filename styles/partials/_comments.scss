@@ -4,172 +4,163 @@
 @use "./global";
 
 label {
-    color: $silver;
-    font-weight: 800;
-    font-size: 1rem;
-    margin-bottom: 0.4rem;
+  color: $silver;
+  font-weight: 800;
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
 
-    @include tablet {
-        font-size: 1.3rem;
-    }
+  @include tablet {
+    font-size: 1.3rem;
   }
-  
-  input {
-    min-width: 16rem;
-    min-width: 24rem;
-    background-color: $alabaster;
-    border: 2px solid $mercury;
-    border-radius: 5px;
-    font-family: 'Avenir Regular';
-    font-weight: 400;
-    color: $black;
-    padding: 0;
-    padding-left: 2rem;
-    margin-bottom: 2rem;
-  
-    &:focus {
-      outline-color: $silver;
-    }
-  
-    @include tablet {
-      width: 44rem;
-    }
+}
+
+input {
+  background-color: $alabaster;
+  border: 2px solid $mercury;
+  border-radius: 5px;
+  font-family: "Avenir Regular";
+  font-weight: 400;
+  color: $black;
+  padding: 0;
+  padding-left: 2rem;
+  margin-bottom: 2rem;
+  min-width: 20rem;
+  max-width: 24rem;
+
+  &:focus {
+    outline-color: $silver;
   }
-  
-  input[type="text"] {
-    height: 4rem;
+
+  @include tablet {
+    width: 48rem;
   }
-  
-  input[type="textarea"] {
-    height: 8rem;
-  }
+}
+
+input[type="text"] {
+  height: 4rem;
+}
+
+input[type="textarea"] {
+  height: 8rem;
+  vertical-align: top;
+}
 
 .comments {
-    padding: 5% 5% 2%;
-  
-      @include desktop {
-        padding: 4rem 0;
-        margin: 0 auto;
-        width: 98.6rem;
-      }
-  
-  
-    &__pfp {
-      border-radius: 50%;
-      height: 3.6rem;
-      width: 3.6rem;
-      margin-right: 2rem;
-  
-      @include tablet {
-        height: 4.8rem;
-        width: 4.8rem;
-  
-      }
-    }
-  
-    &__form {
-      @include flex($align: flex-start);
-      padding: 2rem 0;
-      border-bottom: 0.2rem solid $mercury;
-      margin-bottom: 2rem;
+  padding: 5% 5% 2%;
 
-      @include tablet {
-        width: 48rem;
-        margin: 0 auto;
-    }
-
+  &__header {
     @include desktop {
-        width: 60rem;
-        margin: 0 auto;
-      }
-
+      width: 98.6rem;
+      margin: 0 auto;
+      padding: 0;
     }
-  
-    &__input {
-      @include flex($direction: column, $align: flex-start);
-    }
-  
-    &__button {
-        width: 100%;
-        @include tablet {
-            width: 16rem;
-            align-self: end;
-        }
-    }
-  
-    &__pfp-box {
-      height: 3.6rem;
-      width: 3.6rem;
-      border-radius: 50%;
-      margin: 1rem;
-      border: none;
-      background-color: $mercury;
-      background-size: cover;
-  
-      &--form {
-        background-image: url(../assets/images/Mohan-muruge.jpg);
-        background-size: cover;
-      }
-  
-      @include tablet {
-        height: 4.8rem;
-        width: 4.8rem;
-        margin: 1rem;
-        margin-right: 2rem;
-  
-      }
-    }
-
-    &__all-comments {
-        margin: 0 auto;
-        margin-top: 2rem;
-
-        @include tablet {
-            width: 48rem;
-        }
-    }
-  
-    &__box {
-      @include flex($align: flex-start);
-      border-bottom: 0.2rem solid $mercury;
-      margin-bottom: 2rem;
-
-      @include tablet {
-        width: 48rem;
-        margin: 0 auto;
-        margin-bottom: 2rem;
-      }
-
-      @include desktop {
-        width: 60rem;
-        margin: 0 auto;
-        margin-bottom: 2rem;
-      }
-
-
-    }
-  
-    &__text-display {
-      @include flex($direction: column);
-    }
-  
-    &__name-date {
-      @include flex($justify: space-between);
-    }
-  
-    &__name {
-      font-weight: 600;
-    }
-  
-    &__date {
-      color: $mercury;
-    }
-  
-    &__comment {
-      font-size: 1.2rem;
-      margin: 0.4rem 0;
-    }
-  
   }
-  
-  
+
+  &__form {
+    @include flex($align: flex-start);
+    border-bottom: 0.2rem solid $mercury;
+    margin: 0;
+    margin-bottom: 2rem;
+    padding: 2rem 0;
+
+    @include tablet {
+      width: 48rem;
+      margin: 0 auto;
+    }
+  }
+
+  &__input {
+    @include flex($direction: column, $align: flex-start);
+
+    @include tablet {
+      width: 48rem;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    color: $mercury;
+
+    &:hover {
+      color: white;
+    }
+
+    @include tablet {
+      width: 16rem;
+      align-self: end;
+    }
+  }
+
+  &__pfp-box {
+    background-color: $mercury;
+    background-size: cover;
+    height: 3.6rem;
+    width: 3.6rem;
+    border-radius: 50%;
+    margin-right: 2rem;
+
+    &--form {
+      background-image: url(../assets/images/Mohan-muruge.jpg);
+      background-size: cover;
+    }
+
+    @include tablet {
+      height: 4.8rem;
+      width: 4.8rem;
+      margin: 2rem;
+    }
+  }
+
+  &__all-comments {
+    margin: 0 auto;
+    margin-top: 2rem;
+
+    @include tablet {
+      width: 48rem;
+    }
+  }
+
+  &__box {
+    @include flex($align: flex-start);
+    border-bottom: 0.2rem solid $mercury;
+    margin-bottom: 2rem;
+
+    @include tablet {
+      width: 100%;
+      margin: 0 auto;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__text-display {
+    @include flex($direction: column);
+
+    @include tablet {
+      width: 40rem;
+    }
+  }
+
+  &__name-date {
+    @include flex($justify: space-between);
+  }
+
+  &__name {
+    font-weight: 800;
+    padding-right: 4rem;
+  }
+
+  &__date {
+    color: $mercury;
+  }
+
+  &__comment {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    margin: 0.4rem 0;
+    width: 20rem;
+
+    @include tablet {
+      width: 40rem;
+    }
+  }
+}
