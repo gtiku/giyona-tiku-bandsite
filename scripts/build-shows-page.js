@@ -158,9 +158,11 @@ listShows(showsData);
 // ONCLICK STYLING
 // -------------------------------------------------------------
 
-const selectedShow = document.querySelector(".shows__event-block");
 
-selectedShow.addEventListener("click", (event) => {
+
+let show = document.querySelector("shows__event-block");
+show.addEventListener("click", () => {
+  
   document.querySelectorAll('.shows__event-block').classList.remove('shows__event-block--selected');
-  selectedShow.classList.add("shows__event-block--selected");
+  show.classList.add("shows__event-block--selected");
 });

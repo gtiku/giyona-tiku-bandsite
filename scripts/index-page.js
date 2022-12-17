@@ -31,6 +31,7 @@ form.appendChild(inputsDiv);
 let nameLabel = document.createElement("label");
 nameLabel.classList.add("comments__form-name");
 nameLabel.for = "name";
+nameLabel.name = "name";
 nameLabel.innerText = "NAME";
 inputsDiv.appendChild(nameLabel);
 
@@ -47,13 +48,13 @@ inputsDiv.appendChild(nameInput);
 let commentLabel = document.createElement("label");
 commentLabel.classList.add("comments__form-text");
 commentLabel.for = "comment";
+commentLabel.name = "comment";
 commentLabel.innerText = "COMMENT";
 inputsDiv.appendChild(commentLabel);
 
 // COMMENT INPUT
-let commentInput = document.createElement("input");
+let commentInput = document.createElement("textarea");
 commentInput.classList.add("comments__form-text");
-commentInput.type = "textarea";
 commentInput.name = "comment";
 commentInput.placeholder = "Add a new comment";
 commentInput.required = true;
@@ -62,7 +63,6 @@ inputsDiv.appendChild(commentInput);
 // SUBMIT BUTTON
 let button = document.createElement("button");
 button.classList.add("comments__button");
-button.type = "submit";
 button.innerText = "COMMENT";
 inputsDiv.appendChild(button);
 
