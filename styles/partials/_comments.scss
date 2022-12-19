@@ -132,11 +132,11 @@ textarea {
   }
 
   &__text-display {
-    @include flex($direction: column);
-    min-width: 20rem;
+    @include flex($direction: column, $align: flex-start);
+    width: 20rem;
 
     @include tablet {
-      max-width: 50rem;
+      width: 50rem;
     }
   }
 
@@ -163,5 +163,6 @@ textarea {
     font-size: 1.4rem;
     line-height: 1.6rem;
     margin: 0.4rem 0;
+    text-align: left;
   }
 }

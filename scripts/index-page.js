@@ -67,31 +67,6 @@ button.innerText = "COMMENT";
 inputsDiv.appendChild(button);
 
 // -------------------------------------------------------------
-// COMMENT DATA
-// -------------------------------------------------------------
-
-commentData = [
-  {
-    name: "Connor Walton",
-    date: "02/17/2021",
-    comment:
-      "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-  },
-  {
-    name: "Emilie Beach",
-    date: "01/09/2021",
-    comment:
-      "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-  },
-  {
-    name: "Miles Acosta",
-    date: "12/20/2020",
-    comment:
-      "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-  },
-];
-
-// -------------------------------------------------------------
 // DISPLAY COMMENTS FUNCTION
 // -------------------------------------------------------------
 
@@ -101,12 +76,10 @@ allCommentsBox.classList.add("comments__all-comments");
 allCommentsBox.innerHTML = "";
 commentsSection.appendChild(allCommentsBox);
 
-displayComments = (commentArray) => {
-  // CLEAR COMMENTS
-  allCommentsBox.innerHTML = "";
+displayComments = (commentData) => {
+  // BUILDING COMMENT CARDS
 
-  // REBUILD COMMENTS
-  commentArray.forEach((comment) => {
+  commentData.forEach((comment) => {
     // COMMENT BOX
     let commentBox = document.createElement("div");
     commentBox.classList.add("comments__box");
@@ -137,7 +110,7 @@ displayComments = (commentArray) => {
     // DATE
     let date = document.createElement("p");
     date.classList.add("comments__date");
-    date.innerText = comment.date;
+    date.innerText = new Date(comment.timestamp).toLocaleDateString();
     nameDateDiv.appendChild(date);
 
     // COMMENT
@@ -148,30 +121,50 @@ displayComments = (commentArray) => {
   });
 };
 
-displayComments(commentData);
-
 // -------------------------------------------------------------
-// FORM LOGIC
+// API
 // -------------------------------------------------------------
 
-const submit = document.querySelector("form");
+// -- -------------  GET API DATA & DISPLAY COMMENTS------------- --
 
-submit.addEventListener("submit", (event) => {
+let commentsUrl = "https://project-1-api.herokuapp.com/comments?";
+let apiKey = "api_key=556d9ea4-0972-48e0-940f-2466d2396117";
+
+const getComments = () => {
+  axios
+    .get(commentsUrl + apiKey)
+    .then((result) => {
+      let comments = result.data;
+      displayComments(
+        comments.sort(function (x, y) {
+          return y.timestamp - x.timestamp;
+        })
+      );
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+};
+getComments();
+
+// -- -------------  COMMENT FORM LOGIC ------------- --
+
+form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const name = event.target.name.value;
-  const comment = event.target.comment.value;
-  const date = new Date();
-
-  const newEntry = {
-    name: name,
-    date: date.toLocaleDateString(),
-    comment: comment,
+  let newComment = {
+    name: event.target.name.value,
+    comment: event.target.comment.value,
   };
 
-  commentData.unshift(newEntry);
-
-  displayComments(commentData);
+  axios
+    .post(commentsUrl + apiKey, newComment)
+    .then(() => {
+      getComments();
+    })
+    .catch((error) => {
+      console.error(error);
+    });
 
   event.target.reset();
 });
