@@ -263,7 +263,6 @@ footer {
   &__iframe {
     padding: 0 2rem;
     width: 28rem;
-    // height: 12rem;
 
     @include tablet {
       padding: 0;
@@ -369,7 +368,6 @@ footer {
   }
 
   &__column {
-    // padding-bottom: 2.4rem;
     padding: 0 5.6rem 3.2rem 0;
     @include tablet {
       padding: 0 5.6rem 3.2rem 0;

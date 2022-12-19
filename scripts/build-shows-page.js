@@ -38,47 +38,15 @@ locationLabel.innerText = "LOCATION";
 labels.appendChild(locationLabel);
 
 // -------------------------------------------------------------
-// SHOWS DISPLAY
+// BUILD SHOWS DISPLAY
 // -------------------------------------------------------------
-
-const showsData = [
-  {
-    date: "Mon Sept 06 2021",
-    venue: "Ronald Lane ",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Tue Sept 21 2021",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Oct 15 202",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Nov 06 2021 ",
-    venue: "Hyatt Agency ",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Nov 26 2021",
-    venue: "Moscow Center ",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Wed Dec 15 2021",
-    venue: "Press Club ",
-    location: "San Francisco, CA",
-  },
-];
 
 listShows = (shows) => {
   shows.forEach((show) => {
     // WRAPPER WITH MOBILE BUTTON
     let eventBlock = document.createElement("div");
     eventBlock.classList.add("shows__event-block");
+    eventBlock.addEventListener("click", toggleActiveShow);
     showsSection.appendChild(eventBlock);
 
     // CONTAINER WITH TABLET/DESKTOP BUTTON
@@ -101,7 +69,7 @@ listShows = (shows) => {
     let date = document.createElement("p");
     date.classList.add("shows__info");
     date.classList.add("shows__info--date");
-    date.innerText = show.date;
+    date.innerText = new Date(show.date).toDateString();
     dataBlockDate.appendChild(date);
 
     // VENUE CONTAINER
@@ -118,7 +86,7 @@ listShows = (shows) => {
 
     let venue = document.createElement("p");
     venue.classList.add("shows__info");
-    venue.innerText = show.venue;
+    venue.innerText = show.place;
     dataBlockVenue.appendChild(venue);
 
     // LOCATION CONTAINER
@@ -152,17 +120,36 @@ listShows = (shows) => {
   });
 };
 
-listShows(showsData);
+// -------------------------------------------------------------
+// GET API DATA & DISPLAY SHOWS
+// -------------------------------------------------------------
+
+let showsUrl = "https://project-1-api.herokuapp.com/showdates?";
+let apiKey = "api_key=556d9ea4-0972-48e0-940f-2466d2396117";
+
+const getShowdates = () => {
+  axios
+    .get(showsUrl + apiKey)
+    .then((result) => {
+      let showdates = result.data;
+      listShows(showdates);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+};
+getShowdates();
 
 // -------------------------------------------------------------
 // ONCLICK STYLING
 // -------------------------------------------------------------
 
+function toggleActiveShow(event) {
+  const allShows = document.querySelectorAll(".shows__event-block");
+  allShows.forEach((show) => {
+    show.classList.remove("shows__event-block--active");
+  });
 
-
-let show = document.querySelector("shows__event-block");
-show.addEventListener("click", () => {
-  
-  document.querySelectorAll('.shows__event-block').classList.remove('shows__event-block--selected');
-  show.classList.add("shows__event-block--selected");
-});
+  const clickedShow = event.target.closest(".shows__event-block");
+  clickedShow.classList.add("shows__event-block--active");
+}
