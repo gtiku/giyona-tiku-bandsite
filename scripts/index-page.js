@@ -76,7 +76,7 @@ allCommentsBox.classList.add("comments__all-comments");
 allCommentsBox.innerHTML = "";
 commentsSection.appendChild(allCommentsBox);
 
-displayComments = (commentData) => {
+const displayComments = (commentData) => {
   // CLEAR OLD COMMENTS
   allCommentsBox.innerHTML = "";
   

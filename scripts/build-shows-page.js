@@ -41,7 +41,7 @@ labels.appendChild(locationLabel);
 // BUILD SHOWS DISPLAY
 // -------------------------------------------------------------
 
-listShows = (shows) => {
+const listShows = (shows) => {
   shows.forEach((show) => {
     // WRAPPER WITH MOBILE BUTTON
     let eventBlock = document.createElement("div");
