@@ -77,6 +77,9 @@ allCommentsBox.innerHTML = "";
 commentsSection.appendChild(allCommentsBox);
 
 displayComments = (commentData) => {
+  // CLEAR OLD COMMENTS
+  allCommentsBox.innerHTML = "";
+  
   // BUILDING COMMENT CARDS
 
   commentData.forEach((comment) => {
