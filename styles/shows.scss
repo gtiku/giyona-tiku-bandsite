@@ -3,6 +3,84 @@
 @use "./partials/mixins" as *;
 @use "./partials/global";
 
+#shows-hero.hero {
+  background-image: url(../assets/images/hero-shows.jpg);
+}
+
+.hero {
+  margin: 0;
+
+  &__contents {
+    padding: 2.4rem 1.6rem;
+
+    @include tablet {
+      padding: 4rem;
+    }
+
+    @include desktop {
+      @include flex($justify: flex-start, $align: end);
+      width: 98.6rem;
+      margin: 0 auto;
+      padding: 16rem 0;
+    }
+  }
+
+  &__artist {
+    font-family: "Avenir Regular";
+    font-weight: 400;
+
+    @include tablet {
+      font-size: 3.2rem;
+    }
+  }
+
+  &__song {
+    color: white;
+    font-size: 3rem;
+    line-height: 3.2rem;
+
+    @include tablet {
+      font-size: 6rem;
+      line-height: 6.4rem;
+    }
+  }
+
+  &__text-box {
+    padding-bottom: 2rem;
+    margin-right: 20%;
+
+    @include tablet {
+      padding: 2rem 0;
+    }
+    @include desktop {
+      margin: 0;
+      padding: 0;
+      padding-right: 4rem;
+    }
+  }
+
+  &__iframe {
+    padding: 0;
+    width: 95%;
+    height: 10rem;
+
+    @include tablet {
+      padding: 0;
+      margin: 2rem 0;
+      height: 16rem;
+      width: 60%;
+    }
+
+    @include desktop {
+      width: 45rem;
+    }
+  }
+
+  &__music-player {
+    margin: 0 auto;
+  }
+}
+
 .shows {
   margin-bottom: 2rem;
 
