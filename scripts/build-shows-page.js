@@ -152,4 +152,4 @@ function toggleActiveShow(event) {
 
   const clickedShow = event.target.closest(".shows__event-block");
   clickedShow.classList.add("shows__event-block--active");
-}
+} 
