@@ -46,7 +46,7 @@ listShows = (shows) => {
     // WRAPPER WITH MOBILE BUTTON
     let eventBlock = document.createElement("div");
     eventBlock.classList.add("shows__event-block");
-    eventBlock.addEventListener("click", toggleActiveShow);
+    eventBlock.addEventListener("mousedown", toggleActiveShow);
     showsSection.appendChild(eventBlock);
 
     // CONTAINER WITH TABLET/DESKTOP BUTTON
@@ -152,4 +152,4 @@ function toggleActiveShow(event) {
 
   const clickedShow = event.target.closest(".shows__event-block");
   clickedShow.classList.add("shows__event-block--active");
-} 
+}
