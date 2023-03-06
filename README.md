@@ -2,15 +2,37 @@
 
 ## JavaScript DOM, Web API, Responsive Design
 
+Bootcamp project to build a website for a band, pulling data from a web api.
+
+> ### Features
+>
+> - Embedded Soundcloud music player
+> - Adding comments via POST request
+> - Fully responsive design with interactive styling
+
 <br>
+
+### Biography Page
+
+![](./assets/images/readme/bandsite-bio.gif)
+
+<br>
+
+### Shows Page
+
+![](./assets/images/readme/bandsite-shows.gif)
+
+<br>
+
+### POST comments to API
+
+![](./assets/images/readme/bandsite-add-comments.gif)
+<br>
+
+### Responsive design
 
 ![](./assets/images/readme/bandsite-responsive.gif)
 
-<br><br>
-
-### POST new comments to API
-
-![](./assets/images/readme/bandsite-add-comments.gif)
 <br><br>
 
 ### Functional Requirements
@@ -22,6 +44,8 @@
 - New comments are not required to have a provided avatar image, but can use a placeholder.
 - The Shows Page must display the shows data retrieved from the API.
 
+<br>
+
 ### Implementation Requirements
 
 - The project's CSS must be derived from Sass and use any Sass features that make the code more concise and reusable, such as variables or mixins.
@@ -30,7 +54,7 @@
 - The site must use axios (imported using a CDN) for the API HTTP requests.
 - You must use addEventListener to register your event handler functions, instead of using HTML
 
-<br><br><br>
+<br><br>
 
 ## Setup
 
